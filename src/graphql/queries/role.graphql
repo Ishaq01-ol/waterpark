@@ -1,0 +1,24 @@
+query FindRole {
+  findRole {
+    name
+    active
+    user_id
+    
+    _id
+    modules {
+      name
+      views
+    }
+    operations {
+      name
+      views
+    }
+  }
+}
+
+query FindRolesByUserId($findRolesByUserIdId: ID!) {
+  findRolesByUserId(id: $findRolesByUserIdId) {
+    _id
+    name
+  }
+}

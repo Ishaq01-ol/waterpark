@@ -1,0 +1,61 @@
+query users {
+  users {
+    first_name
+    last_name
+    email
+    rec_email
+    photo_url
+    phone {
+      code
+      phoneNo
+    }
+    scopes
+    admin
+    active
+  }
+}
+
+query UserById($userByIdId: String!) {
+  userById(id: $userByIdId) {
+    _id
+    first_name
+    last_name
+    email
+    rec_email
+    photo_url
+    scopes
+    operations {
+      name
+      views
+    }
+    modules {
+      name
+      views
+    }
+     role {
+    _id
+    name
+    active
+    user_id
+     }
+    password
+    admin
+    active
+  }
+}
+
+# To Get Users for Manage Users Operation
+query FindRelatingUsers($findRelatingUsersId: ID!) {
+  findRelatingUsers(id: $findRelatingUsersId) {
+  _id
+  name
+  role
+  action {
+    edit
+    view
+    delete
+  }
+  active
+  createdOn
+  }
+}

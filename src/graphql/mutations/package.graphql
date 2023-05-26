@@ -1,0 +1,33 @@
+# Crating Package
+mutation AddPackage($packageInput: PackageInput!) {
+  addPackage(packageInput: $packageInput) {
+    _id
+    title
+    modules {
+      name
+      views
+    }
+    cost
+    compare_at
+    active
+    discount
+    discount_type
+  }
+}
+
+# Update Package
+mutation UpdatePackage($updatePackageInput: UpdatePackageInput!) {
+  updatePackage(updatePackageInput: $updatePackageInput) {
+    _id
+    title
+    modules {
+      name
+      views
+    }
+    cost
+    compare_at
+    active
+    discount
+    discount_type
+  }
+}

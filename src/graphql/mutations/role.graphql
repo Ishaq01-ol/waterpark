@@ -1,0 +1,9 @@
+# Create
+mutation AddRole($roleInput: RoleInput!) {
+  addRole(roleInput: $roleInput) {
+    _id
+    name
+    active
+    user_id
+  }
+}
